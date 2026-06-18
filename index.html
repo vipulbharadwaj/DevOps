@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Happy Page</title>
+
+    <style>
+        body{
+            margin:0;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#fff7f5;
+            font-family:Verdana, sans-serif;
+        }
+
+        .card{
+            text-align:center;
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.08);
+            max-width:400px;
+        }
+
+        h1{
+            color:#ff7b89;
+            margin-bottom:10px;
+        }
+
+        p{
+            color:#666;
+            line-height:1.6;
+        }
+
+        .flower{
+            font-size:60px;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        button{
+            margin-top:15px;
+            padding:10px 20px;
+            border:none;
+            border-radius:25px;
+            background:#ffb6c1;
+            color:white;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#ff95a8;
+        }
+
+        @keyframes float{
+            0%,100%{transform:translateY(0);}
+            50%{transform:translateY(-8px);}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="flower">🌸</div>
+
+        <h1>Hello there!</h1>
+
+        <p>
+            Welcome to my tiny corner of the internet.
+            Have a wonderful day and keep smiling ✨
+        </p>
+
+        <button onclick="changeMessage()">
+            Click Me
+        </button>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const messages = [
+            "You're doing great! 🌷",
+            "Remember to drink water 💧",
+            "Today is a good day 🌞",
+            "Keep learning and growing 🌱",
+            "You got this! ✨"
+        ];
+
+        function changeMessage() {
+            const random =
+                messages[Math.floor(Math.random() * messages.length)];
+
+            document.getElementById("message").innerText = random;
+        }
+    </script>
+
+</body>
+</html>
